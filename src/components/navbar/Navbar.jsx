@@ -17,15 +17,19 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <div>
-        <Link href="/">Home</Link>
+        <Link href="/" className={styles.logo}>
+          Home
+        </Link>
       </div>
-      <div>
+      <div className={styles.links}>
         {links.map((link) => (
-          <Link key={link.id} href={link.url}>
+          <Link className={styles.link} key={link.id} href={link.url}>
             {link.title}
           </Link>
         ))}
-        <button onClick={() => console.log("logoit")}>Logout</button>
+        <button className={styles.logout} onClick={() => console.log("logoit")}>
+          Logout
+        </button>
       </div>
     </div>
   );
