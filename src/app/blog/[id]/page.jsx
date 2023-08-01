@@ -4,6 +4,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 async function getData(id) {
+  console.log(process.env);
+
   const res = await fetch(`${process.env.CLIENT_URL}/posts/${id}`, {
     cache: "no-store",
   });
@@ -13,6 +15,14 @@ async function getData(id) {
   }
 
   return res.json();
+}
+
+export async function generateMetadata({ params }) {
+  const post = await getData(params.id);
+  return {
+    title: post.title,
+    description: post.desc,
+  };
 }
 
 const BlogPost = async ({ params }) => {
