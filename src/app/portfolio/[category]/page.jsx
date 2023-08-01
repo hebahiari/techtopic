@@ -3,87 +3,37 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import Button from "@/components/button/Button";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+import { items } from "./data";
+
+const getData = (category) => {
+  const data = items[category];
+
+  if (data) {
+    return data;
+  }
+
+  return notFound();
+};
 
 const Category = ({ params }) => {
+  const data = getData(params.category);
   return (
     <div>
       <h1 className={styles.mainTitle}>{params.category}</h1>
-      <div className={styles.item}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>tit</h1>
-          <p className={styles.desc}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-          <Button url="#" text="See More" />
+
+      {data.map((item) => (
+        <div className={styles.item} key={item.id}>
+          <div className={styles.content}>
+            <h1 className={styles.title}>{item.title}</h1>
+            <p className={styles.desc}>{item.desc}</p>
+            <Button url="#" text="See More" />
+          </div>
+          <div className={styles.imageContainer}>
+            <Image className={styles.image} src={item.image} fill={true} />
+          </div>
         </div>
-        <div className={styles.imageContainer}>
-          <Image
-            className={styles.image}
-            src="https://images.pexels.com/photos/2470263/pexels-photo-2470263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            fill={true}
-          />
-        </div>
-      </div>
-      <div className={styles.item}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>tit</h1>
-          <p className={styles.desc}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-          <Button url="#" text="See More" />
-        </div>
-        <div className={styles.imageContainer}>
-          <Image
-            className={styles.image}
-            src="https://images.pexels.com/photos/2470263/pexels-photo-2470263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            fill={true}
-          />
-        </div>
-      </div>
-      <div className={styles.item}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>tit</h1>
-          <p className={styles.desc}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-          <Button url="#" text="See More" />
-        </div>
-        <div className={styles.imageContainer}>
-          <Image
-            className={styles.image}
-            src="https://images.pexels.com/photos/2470263/pexels-photo-2470263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            fill={true}
-          />
-        </div>
-      </div>
-      <div className={styles.item}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>tit</h1>
-          <p className={styles.desc}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-          <Button url="#" text="See More" />
-        </div>
-        <div className={styles.imageContainer}>
-          <Image
-            className={styles.image}
-            src="https://images.pexels.com/photos/2470263/pexels-photo-2470263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            fill={true}
-          />
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
