@@ -1,3 +1,58 @@
 .container {
-  background-color: darkblue;
+  display: flex;
+  gap: 100px;
+}
+
+.posts {
+  flex: 1;
+}
+
+.new {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0px;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.imageContainer {
+  position: relative;
+  width: 200px;
+  height: 100px;
+}
+
+.delete {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.input,
+.textarea {
+  padding: 10px;
+  background-color: white;
+  background-repeat: 3px;
+  border: 2px solid #000000;
+  font-size: 20px;
+  font-weight: bold;
+  columns: #bbb;
+}
+
+.button {
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: gold;
+  width: 100%;
+  color: white;
 }

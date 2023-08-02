@@ -1,13 +1,25 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./page.module.css";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const Login = () => {
   const [error, setError] = useState(false);
+  const session = useSession();
   const router = useRouter();
+
+  /// this part redirects logged in users to their dashboard
+  if (session.status === "loading") {
+    return <p>Loading.... </p>;
+  }
+
+  if (session.status === "authenticated") {
+    return <div className={styles.container}>Dashboard</div>;
+    router?.push("/dashboard");
+  }
+  //////
 
   const handleSubmit = async (event) => {
     event.preventDefault();
