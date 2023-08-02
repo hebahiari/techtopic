@@ -45,10 +45,12 @@ const Login = () => {
           required
         />
         <button className={styles.button}>Login</button>
-        <Link href="/dashboard/login">Login with an existing account</Link>
       </form>
       {error && "something went wrong"}
-      <button onClick={() => signIn("google")}>Login with Google</button>
+      <button className={styles.button} onClick={() => signIn("google")}>
+        Log In with Google
+      </button>
+      <Link href="/dashboard/register">New here? Click here to sign up</Link>
     </div>
   );
 };

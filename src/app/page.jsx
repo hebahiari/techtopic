@@ -7,7 +7,7 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.item}>
         <h1 className={styles.title}>
-          Better design for your digital products
+          Discover and share the latest news in tech
         </h1>
         <p className={styles.desc}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

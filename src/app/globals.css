@@ -16,7 +16,7 @@ a {
 }
 
 .light {
-  background-color: #bbb;
+  background-color: #ffffff;
   color: #111;
 }
 
@@ -37,4 +37,20 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+input {
+  padding: 20px;
+  background-color: transparent;
+  border: 2px solid #000000;
+  font-size: 20px;
+  font-weight: bold;
+  color: azure;
+}
+
+form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
