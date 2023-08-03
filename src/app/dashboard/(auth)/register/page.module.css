@@ -8,13 +8,14 @@
 }
 
 .button {
-  width: 300px;
-  padding: 20px;
-  cursor: pointer;
-  background-color: blueviolet;
   border: none;
   border-radius: 5px;
-  color: wheat;
+  padding: 20px;
+  cursor: pointer;
+  background-color: rgb(29, 125, 35);
+  width: 100%;
+  color: white;
+  font-size: 15px;
   font-weight: bold;
 }
 
@@ -31,4 +32,5 @@
   border-radius: 5px;
   color: rgb(0, 0, 0);
   font-weight: bold;
+  font-size: 15px;
 }

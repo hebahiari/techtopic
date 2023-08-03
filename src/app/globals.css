@@ -17,7 +17,7 @@ a {
 
 .light {
   background-color: #ffffff;
-  color: #111;
+  color: #3c3c3c;
 }
 
 .dark {
@@ -33,19 +33,20 @@ a {
   max-width: 1366px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-input {
+input,
+textarea {
   padding: 20px;
   background-color: transparent;
-  border: 2px solid #000000;
   font-size: 20px;
-  font-weight: bold;
   color: rgb(0, 0, 0);
+  border: 1px solid rgb(187, 186, 186);
+  border-radius: 20px;
 }
 
 form {
@@ -53,4 +54,10 @@ form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+@media (min-width: 700px) {
+  .container {
+    padding: 0 60px;
+  }
 }

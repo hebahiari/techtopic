@@ -8,8 +8,9 @@ import Image from "next/image";
 
 const Dashboard = () => {
   const session = useSession();
-
   const router = useRouter();
+
+  const Loading = <p className={styles.loading}>Loading.... </p>;
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, mutate, error, isLoading } = useSWR(
@@ -19,7 +20,7 @@ const Dashboard = () => {
 
   //// this part protects the dashboard route from users who are not logged in
   if (session.status === "loading") {
-    return <p>Loading.... </p>;
+    return Loading;
   }
 
   if (session.status === "unauthenticated") {
@@ -40,7 +41,6 @@ const Dashboard = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(event.target);
     const title = event.target[0].value;
     const desc = event.target[1].value;
     const image = event.target[2].value;
@@ -69,8 +69,9 @@ const Dashboard = () => {
       <div className={styles.container}>
         {isLoading || data?.length ? (
           <div className={styles.posts}>
+            <h1 className={styles.formTitle}>Your Posts</h1>
             {isLoading
-              ? "Loading..."
+              ? Loading
               : data?.map((post) => (
                   <div className={styles.post} key={post._id}>
                     <div className={styles.imageContainer}>

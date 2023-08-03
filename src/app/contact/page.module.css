@@ -1,28 +1,40 @@
 .container {
-  background-color: rgb(38, 14, 14);
 }
 
 .title {
   font-size: 60px;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
   text-align: center;
 }
 
 .content {
   display: flex;
   align-items: center;
+  flex-direction: column-reverse;
   gap: 100px;
 }
 
 .imageContainer {
-  position: relative;
   flex: 1;
+  position: relative;
   height: 500px;
+  width: 500px;
 }
 
 .image {
   object-fit: cover;
   animation: move 3s infinite ease alternate;
+}
+
+.button {
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+  background-color: rgb(29, 125, 35);
+  width: 100%;
+  color: white;
+  font-size: 15px;
 }
 
 @keyframes move {
@@ -41,17 +53,8 @@
   gap: 20px;
 }
 
-.input,
-.textArea {
-  padding: 20px;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  columns: #bbb;
-  border: 3px solid #bbb;
-  font-style: 20px;
-  font-weight: bold;
-}
-
-.textArea {
+@media (min-width: 700px) {
+  .content {
+    flex-direction: row;
+  }
 }

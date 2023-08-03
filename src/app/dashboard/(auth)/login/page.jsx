@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 const Login = () => {
   const [error, setError] = useState(false);
@@ -46,8 +47,13 @@ const Login = () => {
         <button className={styles.button}>Login</button>
       </form>
       {error && "something went wrong"}
-      <button className={styles.button} onClick={() => signIn("google")}>
-        Log In with Google
+      <button className={styles.googlebutton} onClick={() => signIn("google")}>
+        <Image
+          src="https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Google-256.png"
+          width={20}
+          height={20}
+        />
+        Log In with Google{" "}
       </button>
       <Link href="/dashboard/register">New here? Click here to sign up</Link>
     </div>

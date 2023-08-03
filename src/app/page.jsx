@@ -17,11 +17,10 @@ export default function Home() {
         </p>
         <Button url="/portfolio" text="Learn More" />
       </div>
-      <div className={styles.item}>
+      <div className={styles.imageContainer}>
         <Image
-          src="/hero.png"
-          width={500}
-          height={500}
+          src="/heroin.png"
+          fill={true}
           alt=""
           className={styles.image}
         ></Image>

@@ -24,8 +24,6 @@ export async function generateMetadata({ params }) {
 }
 
 const BlogPost = async ({ params }) => {
-  console.log("hello---------------------------");
-
   const data = await getData(params.id);
 
   return (

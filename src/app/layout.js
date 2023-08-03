@@ -1,21 +1,22 @@
 import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Inter, Andada_Pro } from "next/font/google";
 import Footer from "@/components/footer/Footer";
 import { ThemeProvider } from "@/context/ThemeContext";
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
+const andada_pro = Andada_Pro({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "My NextJS App",
-  description: "My Description",
+  title: "TechTopic",
+  description: "Latest tech news",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={andada_pro.className}>
         <ThemeProvider>
           <AuthProvider>
             <div className="container">
