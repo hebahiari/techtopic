@@ -19,8 +19,10 @@
 .post {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: 50px 0px;
+  background-color: gray;
+  position: relative;
 }
 
 .img {
@@ -30,12 +32,19 @@
 .imageContainer {
   position: relative;
   width: 200px;
-  height: 100px;
+  height: 150px;
 }
 
 .delete {
   cursor: pointer;
   font-weight: bold;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.postTitle {
+  padding: 10px;
 }
 
 .input,

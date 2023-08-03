@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 100px;
+  padding-bottom: 100px;
 }
 
 .item {
@@ -13,7 +14,7 @@
 
 .title {
   font-size: 72px;
-  background: linear-gradient(to bottom, green, pink);
+  background: linear-gradient(to bottom, green, rgb(251, 156, 172));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
