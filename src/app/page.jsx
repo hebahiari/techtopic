@@ -19,7 +19,7 @@ export default function Home() {
       </div>
       <div className={styles.item}>
         <Image
-          src="https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src="/hero.png"
           width={500}
           height={500}
           alt=""

@@ -67,24 +67,26 @@ const Dashboard = () => {
   if (session.status === "authenticated") {
     return (
       <div className={styles.container}>
-        <div className={styles.posts}>
-          {isLoading
-            ? "Loading..."
-            : data?.map((post) => (
-                <div className={styles.post} key={post._id}>
-                  <div className={styles.imageContainer}>
-                    <Image src={post.image} alt="" width={50} height={50} />
+        {isLoading || data?.length ? (
+          <div className={styles.posts}>
+            {isLoading
+              ? "Loading..."
+              : data?.map((post) => (
+                  <div className={styles.post} key={post._id}>
+                    <div className={styles.imageContainer}>
+                      <Image src={post.image} alt="" width={50} height={50} />
+                    </div>
+                    <h2 className={styles.postTitle}>{post.title}</h2>
+                    <span
+                      className={styles.delete}
+                      onClick={() => handleDelete(post._id)}
+                    >
+                      X
+                    </span>
                   </div>
-                  <h2 className={styles.postTitle}>{post.title}</h2>
-                  <span
-                    className={styles.delete}
-                    onClick={() => handleDelete(post._id)}
-                  >
-                    X
-                  </span>
-                </div>
-              ))}
-        </div>
+                ))}
+          </div>
+        ) : null}
         <form className={styles.new} onSubmit={handleSubmit}>
           <h1 className={styles.formTitle}>Add New Post</h1>
           <input type="text" placeholder="Title" className={styles.input} />
