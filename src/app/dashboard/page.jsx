@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import useSWR from "swr";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 const Dashboard = () => {
   const session = useSession();
@@ -73,36 +74,50 @@ const Dashboard = () => {
             {isLoading
               ? Loading
               : data?.map((post) => (
-                  <div className={styles.post} key={post._id}>
-                    <div className={styles.imageContainer}>
-                      <Image src={post.image} alt="" fill={true} />
+                  <Link href={`/blog/${post._id}`}>
+                    <div className={styles.post} key={post._id}>
+                      <div className={styles.imageContainer}>
+                        <Image src={post.image} alt="" fill={true} />
+                      </div>
+                      <h2 className={styles.postTitle}>{post.title}</h2>
+                      <span
+                        className={styles.delete}
+                        onClick={() => handleDelete(post._id)}
+                      >
+                        X
+                      </span>
                     </div>
-                    <h2 className={styles.postTitle}>{post.title}</h2>
-                    <span
-                      className={styles.delete}
-                      onClick={() => handleDelete(post._id)}
-                    >
-                      X
-                    </span>
-                  </div>
+                  </Link>
                 ))}
           </div>
         ) : null}
         <form className={styles.new} onSubmit={handleSubmit}>
           <h1 className={styles.formTitle}>Add New Post</h1>
-          <input type="text" placeholder="Title" className={styles.input} />
+          <input
+            type="text"
+            placeholder="Title"
+            className={styles.input}
+            required
+          />
           <input
             type="text"
             placeholder="Description"
             className={styles.input}
+            required
           />
-          <input type="text" placeholder="Image" className={styles.input} />
+          <input
+            type="text"
+            placeholder="Image"
+            className={styles.input}
+            required
+          />
           <textarea
             placeholder="Content"
             className={styles.textarea}
             cols="30"
             rows="10"
-          ></textarea>
+            required
+          />
           <button className={styles.button}>Send</button>
         </form>
       </div>

@@ -29,6 +29,7 @@
   background: linear-gradient(to bottom, green, rgb(251, 156, 172));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 75px;
 }
 
 .desc {
@@ -59,6 +60,6 @@
   }
 
   .item {
-    gap: 50px;
+    gap: 30px;
   }
 }
