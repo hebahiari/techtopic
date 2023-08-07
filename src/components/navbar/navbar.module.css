@@ -32,11 +32,11 @@
 
 .logout {
   border: none;
-  padding: 5px;
-  background-color: #53c28b;
+  padding: 5px 10px;
+  background-color: rgb(29, 125, 35);
   color: white;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 8px;
 }
 
 @media (min-width: 700px) {

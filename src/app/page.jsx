@@ -10,10 +10,10 @@ export default function Home() {
           Discover and share the latest news in tech
         </h1>
         <p className={styles.desc}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          Join us at TechTopic and become a part of the rapidly growing tech
+          community. Stay informed, inspired, and connected with the world of
+          technology. Whether you are a tech guru or a curious newcomer,
+          TechTopic is your go-to platform for all things tech!
         </p>
         <Button url="/dashboard" text="Get Started" />
       </div>
