@@ -55,7 +55,6 @@
 
 @media (min-width: 700px) {
   .container {
-    padding: 100px;
     padding-top: 50px;
   }
   .item {
