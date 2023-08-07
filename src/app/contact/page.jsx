@@ -2,8 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
-import Image from "next/image";
-import Button from "@/components/button/Button";
 
 // export const metadata = {
 //   title: "Contact Us",
@@ -11,8 +9,27 @@ import Button from "@/components/button/Button";
 // };
 
 const Contact = () => {
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    const name = event.target[0].value;
+    const email = event.target[1].value;
+    const message = event.target[2].value;
+
+    try {
+      const res = await fetch("/api/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      res.status === 201 && router.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+    alert("Message Sent Successfully!");
     event.target.reset();
   };
 

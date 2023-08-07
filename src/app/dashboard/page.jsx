@@ -34,13 +34,16 @@ const Dashboard = () => {
   /////////
 
   const handleDelete = async (id) => {
-    try {
-      await fetch(`/api/posts/${id}`, {
-        method: "DELETE",
-      });
-      mutate();
-    } catch (error) {
-      console.log(error);
+    let response = confirm("Are you sure you want to delete this post?");
+    if (response) {
+      try {
+        await fetch(`/api/posts/${id}`, {
+          method: "DELETE",
+        });
+        mutate();
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -78,20 +81,22 @@ const Dashboard = () => {
             {isLoading
               ? Loading
               : data?.map((post) => (
-                  <Link href={`/blog/${post._id}`}>
-                    <div className={styles.post} key={post._id}>
+                  <div className={styles.post} key={post._id}>
+                    <Link href={`/blog/${post._id}`}>
                       <div className={styles.imageContainer}>
                         <Image src={post.image} alt="" fill={true} />
                       </div>
+                    </Link>
+                    <Link href={`/blog/${post._id}`}>
                       <h2 className={styles.postTitle}>{post.title}</h2>
-                      <span
-                        className={styles.delete}
-                        onClick={() => handleDelete(post._id)}
-                      >
-                        X
-                      </span>
-                    </div>
-                  </Link>
+                    </Link>
+                    <span
+                      className={styles.delete}
+                      onClick={() => handleDelete(post._id)}
+                    >
+                      X
+                    </span>
+                  </div>
                 ))}
           </div>
         ) : null}
