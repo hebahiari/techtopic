@@ -34,7 +34,7 @@ const BlogPost = async ({ params }) => {
           <p className={styles.desc}>{data.desc}</p>
           <div className={styles.author}>
             <Image
-              src="https://images.pexels.com/photos/16013432/pexels-photo-16013432/free-photo-of-portrait-of-woman-lying-on-grass.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src="/avatar.jpeg"
               alt=""
               width={40}
               height={40}

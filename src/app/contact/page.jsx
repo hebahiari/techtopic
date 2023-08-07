@@ -22,7 +22,7 @@ const Contact = () => {
       <div className={styles.content}>
         <div className={styles.imageContainer}>
           <Image
-            src="https://images.pexels.com/photos/5861590/pexels-photo-5861590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="/contact.png"
             fill={true}
             alt="cover image"
             className={styles.image}

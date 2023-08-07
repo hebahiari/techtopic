@@ -9,10 +9,7 @@ const Footer = () => {
     <div className={styles.container}>
       <div>All rights reserved ©</div>
       <div className={styles.icons}>
-        <Link href="/">
-          <FaInstagram className={styles.icon} />
-        </Link>
-
+        <FaInstagram className={styles.icon} />
         <FaTwitter className={styles.icon} />
         <FaFacebook className={styles.icon} />
         <FaGithub className={styles.icon} />
