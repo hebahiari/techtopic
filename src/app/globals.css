@@ -25,6 +25,10 @@ a {
   color: #bbb;
 }
 
+.dark.loading {
+  filter: invert(1);
+}
+
 .theme {
   transition: 1s all ease;
 }
@@ -37,6 +41,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 input,
@@ -54,6 +59,43 @@ form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.loading {
+  background-color: green;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+  animation: moveUp 5s;
+  animation-fill-mode: forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: antiquewhite;
+  gap: 10px;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1000px);
+  }
 }
 
 @media (min-width: 700px) {

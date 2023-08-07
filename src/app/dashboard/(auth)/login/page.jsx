@@ -13,7 +13,7 @@ const Login = () => {
 
   /// this part redirects logged in users to their dashboard
   if (session.status === "loading") {
-    return <p>Loading.... </p>;
+    return <img className="spinner" src="/loading.gif" />;
   }
 
   if (session.status === "authenticated") {
@@ -34,17 +34,17 @@ const Login = () => {
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="email"
-          placeholder="email"
+          placeholder="Enter your email"
           className={styles.input}
           required
         />
         <input
           type="password"
-          placeholder="password"
+          placeholder="Enter your password"
           className={styles.input}
           required
         />
-        <button className={styles.button}>Login</button>
+        <button className={styles.button}>Log In</button>
       </form>
       {error && "something went wrong"}
       <button className={styles.googlebutton} onClick={() => signIn("google")}>

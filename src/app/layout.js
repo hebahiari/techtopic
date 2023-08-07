@@ -17,6 +17,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={andada_pro.className}>
+        <div className="loading ">
+          <h1>TechTopic</h1>
+          <img className="spinner invert" src="/loading.gif"></img>
+        </div>
         <ThemeProvider>
           <AuthProvider>
             <div className="container">

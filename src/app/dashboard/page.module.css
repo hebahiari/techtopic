@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .new {
@@ -38,7 +38,7 @@
 
 .imageContainer {
   position: relative;
-  width: 200px;
+  min-width: 200px;
   height: 150px;
 }
 
@@ -65,11 +65,12 @@
   font-size: 15px;
 }
 
-.loading {
+.loadingscreen {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-style: 50px;
+  width: 100vw;
+  height: 100vh;
 }
 
 @media (min-width: 700px) {
@@ -77,5 +78,8 @@
     flex-direction: row;
     /* justify-content: space-between; */
     align-items: flex-start;
+  }
+  .posts {
+    max-width: 600px;
   }
 }

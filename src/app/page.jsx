@@ -15,16 +15,9 @@ export default function Home() {
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
         </p>
-        <Button url="/portfolio" text="Learn More" />
+        <Button url="/dashboard" text="Get Started" />
       </div>
-      <div className={styles.imageContainer}>
-        <Image
-          src="/heroin.png"
-          fill={true}
-          alt=""
-          className={styles.image}
-        ></Image>
-      </div>
+      <img src="/heroin.png" className={styles.imageContainer} />
     </div>
   );
 }

@@ -20,14 +20,7 @@ const Contact = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Send Us A Message!</h1>
       <div className={styles.content}>
-        <div className={styles.imageContainer}>
-          <Image
-            src="/contact.png"
-            fill={true}
-            alt="cover image"
-            className={styles.image}
-          />
-        </div>
+        <img src="/contact.png" className={styles.imageContainer} />
         <form className={styles.form} onSubmit={handleSubmit}>
           <input
             type="text"

@@ -39,19 +39,19 @@ const Register = () => {
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="username"
+          placeholder="Username"
           className={styles.input}
           required
         />
         <input
           type="email"
-          placeholder="email"
+          placeholder="Email"
           className={styles.input}
           required
         />
         <input
           type="password"
-          placeholder="password"
+          placeholder="Password"
           className={styles.input}
           required
         />

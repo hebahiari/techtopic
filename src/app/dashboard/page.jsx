@@ -11,7 +11,11 @@ const Dashboard = () => {
   const session = useSession();
   const router = useRouter();
 
-  const Loading = <p className={styles.loading}>Loading.... </p>;
+  const Loading = (
+    <div className={styles.loadingscreen}>
+      <img className="spinner" src="/loading.gif" />
+    </div>
+  );
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, mutate, error, isLoading } = useSWR(
@@ -97,12 +101,14 @@ const Dashboard = () => {
             type="text"
             placeholder="Title"
             className={styles.input}
+            maxLength={35}
             required
           />
           <input
             type="text"
             placeholder="Description"
             className={styles.input}
+            maxLength={450}
             required
           />
           <input
