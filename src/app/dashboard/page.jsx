@@ -25,7 +25,7 @@ const Dashboard = () => {
 
   //// this part protects the dashboard route from users who are not logged in
   if (session.status === "loading") {
-    return Loading;
+    return null;
   }
 
   if (session.status === "unauthenticated") {
