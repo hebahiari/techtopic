@@ -72,6 +72,27 @@ const Dashboard = () => {
     }
   };
 
+  const Post = ({post}) => {
+    return (
+      <div className={styles.post} key={post._id}>
+      <Link href={`/blog/${post._id}`}>
+        <div className={styles.imageContainer}>
+          <Image src={post.image} alt="" fill={true} />
+        </div>
+      </Link>
+      <Link href={`/blog/${post._id}`}>
+        <h2 className={styles.postTitle}>{post.title}</h2>
+      </Link>
+      <span
+        className={styles.delete}
+        onClick={() => handleDelete(post._id)}
+      >
+        X
+      </span>
+    </div>
+    )
+  }
+
   if (session.status === "authenticated") {
     return (
       <div className={styles.container}>
@@ -80,24 +101,10 @@ const Dashboard = () => {
             <h1 className={styles.formTitle}>Your Posts</h1>
             {isLoading
               ? Loading
-              : data?.map((post) => (
-                  <div className={styles.post} key={post._id}>
-                    <Link href={`/blog/${post._id}`}>
-                      <div className={styles.imageContainer}>
-                        <Image src={post.image} alt="" fill={true} />
-                      </div>
-                    </Link>
-                    <Link href={`/blog/${post._id}`}>
-                      <h2 className={styles.postTitle}>{post.title}</h2>
-                    </Link>
-                    <span
-                      className={styles.delete}
-                      onClick={() => handleDelete(post._id)}
-                    >
-                      X
-                    </span>
-                  </div>
-                ))}
+              : data?.map((post) => {
+                return <Post key={post.id} post={post} />
+              }
+                )}
           </div>
         ) : null}
         <form className={styles.new} onSubmit={handleSubmit}>
