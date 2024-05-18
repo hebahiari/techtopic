@@ -120,7 +120,6 @@ const Dashboard = () => {
             type="text"
             placeholder="Image"
             className={styles.input}
-            required
           />
           <textarea
             placeholder="Content"
