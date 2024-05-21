@@ -51,8 +51,14 @@ const Dashboard = () => {
     event.preventDefault();
     const title = event.target[0].value;
     const desc = event.target[1].value;
-    const image = event.target[2].value;
     const content = event.target[3].value;
+    let image
+
+    if(image) {
+       image = event.target[2].value;
+    } else {
+       image = 'https://blogassets.leverageedu.com/blog/wp-content/uploads/2020/01/24145013/article-writing.jpg'
+    }
 
     try {
       await fetch("/api/posts", {
@@ -76,9 +82,11 @@ const Dashboard = () => {
     return (
       <div className={styles.post} key={post._id}>
       <Link href={`/blog/${post._id}`}>
-        <div className={styles.imageContainer}>
+      {
+      post.image && ( <div className={styles.imageContainer}>
           <Image src={post.image} alt="" fill={true} />
-        </div>
+        </div>)
+        }
       </Link>
       <Link href={`/blog/${post._id}`}>
         <h2 className={styles.postTitle}>{post.title}</h2>
