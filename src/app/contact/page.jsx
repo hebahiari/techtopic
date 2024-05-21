@@ -17,6 +17,9 @@ const Contact = () => {
     const message = event.target[2].value;
 
     try {
+      if(!/\.(jpg|jpeg|png|gif)$/i.test(image)){
+        throw Error('please use a proper image url')
+      }
       const res = await fetch("/api/messages", {
         method: "POST",
         headers: {
